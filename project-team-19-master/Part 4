@@ -1,0 +1,44 @@
+Let	N=the	number	of	unique	words	in	the	text	file
+S=the	maximum	number	of	unique	words	any	word	appears	with
+
+a) What	data	structure	did	you	finally	use	for	vectors?	What	is	the	asymptotic	memory
+usage	of	a	vector?	Of	all	of	your	vectors? Is	this	memory	usage	reasonable	and	why?
+
+We used a map which contains a  unique word as the key that contains a map of all words that appear in a sentece with key 
+
+memory usage is O(N*S) for single vector
+
+memory usage is O((N^2)*S) for all vectors
+
+yes because it runs in constant look up time. must sacrifice space for speed
+
+
+
+b) What	algorithm	did	you	finally	use	for	cosine	similarity?	What	is	its	asymptotic	running	
+time? Is	this	running	time	reasonable	and	why?
+While map u or map v still have entries
+  do math
+find cosine similarity
+
+Runs in O(n) where n is either entries in map v or u
+
+yeah its reasonable becasue you need to calculate for every value in both maps 
+
+c) What	algorithm	did	you	finally	use	for	the Top-J	calculation? What	is	its	asymptotic	
+running	time	(might	be	in	terms	of	J,	too)? Is	this	running	time	reasonable	and	why?
+while loop to get word vector    O(n) n = entries of unique words
+sort wordvector
+while sorted word vector has next ans i < j  O(j) j = number of top words wanted 
+
+O(n+j) 
+could be better if we could just pass in the word vector
+
+
+d) What	improvements	did	you	make	from	your	original code	to	make	it run	faster? Give	
+an example	of	your	running	time	measurements	before	and	after	the	changes.	Describe	
+the information that	informed	your	choices (asymptotic	running	time	analysis,	
+asymptotic	memory	analysis, and/or profiling).
+
+
+Every place we had an arraylist we changed it to a map. You have to iterate through an arraylist to check for elements 
+in a mapyou can just search by value making the run time consatant in most cases. where the arraylist was terrible at both memory usage and runtime
